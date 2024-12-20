@@ -132,6 +132,9 @@
             color: transparent;
             background-image: linear-gradient(var(--highlight), var(--paper));
         }
+        .display-after {
+            display: none;
+        }
         @media (max-width: 768px) {
             h1 {
                 font-size: 1rem;
@@ -159,7 +162,7 @@
         <source src="./festivalS-countdown-merry-christmas.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="container">
+    <div class="container display-after">
         <h1>Santa will wake up again in </h1>
         <div class="countdown" id="countdown">
             <div class="time">
@@ -203,6 +206,9 @@
         }
 
         setInterval(updateCountdown, 1000);
+        setTimeout(function(){
+            document.querySelector('.container').classList.remove('display-after')
+        },500)
         updateCountdown();
     </script>
     <div class="copyright"> <p>Copyright © 2024 <a href="https://www.festivals-countdown.github.io/merry-christmas">festivals-countdown.github.io</a>. All rights reserved.</p> </div>
